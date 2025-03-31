@@ -36,3 +36,15 @@ This query retrives a list of members who have borrow books, along with the titl
 and the borrow date. It sorts by borrow date in ascending order, that way you can see keep tab of the oldest borrow dates.
 Might be nice to also have one descending.
 */
+
+
+ -- Update example: set member debt to 0
+SELECT * FROM Member WHERE member_ID = 2;
+UPDATE Member SET Debt = 0.00 WHERE member_ID = 2;
+SELECT * FROM Member WHERE member_ID = 2;
+
+-- Delete example: delete book (after removing borrow record)
+SELECT * FROM Book WHERE book_ID = 3;
+DELETE FROM Borrows WHERE book_ID = 3;
+DELETE FROM Book WHERE book_ID = 3;
+SELECT * FROM Book WHERE book_ID = 3;
